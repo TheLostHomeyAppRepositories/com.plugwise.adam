@@ -2,7 +2,7 @@
   "type": "number",
   "title": {
     "en": "Boiler error code",
-    "nl": "Ketel fout code"
+    "nl": "Ketel foutcode"
   },
   "min": 0,
   "max": 255,

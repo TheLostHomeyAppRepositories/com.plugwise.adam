@@ -1,11 +1,13 @@
 'use strict';
 
 const Homey = require('homey');
-const PlugwiseAdamDevice = require('../../lib/PlugwiseAdamDevice');
+const PlugwiseDevice = require('../../lib/PlugwiseDevice');
 
-module.exports = class PlugwiseAdamPlugDevice extends PlugwiseAdamDevice {
-  
+module.exports = class PlugwisePlugDevice extends PlugwiseDevice {
+
   onInit(...props) {
+    this.driverId = 'plug';
+
     super.onInit(...props);
     
     this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
@@ -54,4 +56,4 @@ module.exports = class PlugwiseAdamPlugDevice extends PlugwiseAdamDevice {
     });
   }
 	
-}
+};

@@ -1,6 +1,6 @@
 {
   "id": "com.plugwise.adam",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "compatibility": ">=2.0.0",
   "brandColor": "#3CA2D7",
   "sdk": 2,
@@ -34,12 +34,129 @@
   },
   "homeyCommunityTopicId": 8828,
   "flow": {
+    "triggers": [
+      {
+        "id": "adam:boiler_error_code:changed",
+        "title": {
+          "en": "Boiler error code changed",
+          "nl": "Ketel foutcode veranderd"
+        },
+        "tokens": [
+          {
+            "name": "code",
+            "title": {
+              "en": "Code"
+            },
+            "example": "0"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adam"
+          }
+        ]
+      },
+      {
+        "id": "anna:location_preset:changed",
+        "title": {
+          "en": "The preset has changed",
+          "nl": "De preset is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "preset",
+            "title": {
+              "en": "Preset"
+            },
+            "example": "home"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=anna"
+          }
+        ]
+      },
+      {
+        "id": "lisa:location_preset:changed",
+        "title": {
+          "en": "The preset has changed",
+          "nl": "De preset is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "preset",
+            "title": {
+              "en": "Preset"
+            },
+            "example": "home"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lisa"
+          }
+        ]
+      },
+      {
+        "id": "smile:boiler_error_code:changed",
+        "title": {
+          "en": "Boiler error code changed",
+          "nl": "Ketel foutcode veranderd"
+        },
+        "tokens": [
+          {
+            "name": "code",
+            "title": {
+              "en": "Code"
+            },
+            "example": "0"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smile"
+          }
+        ]
+      },
+      {
+        "id": "zone:location_preset:changed",
+        "title": {
+          "en": "The preset has changed",
+          "nl": "De preset is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "preset",
+            "title": {
+              "en": "Preset"
+            },
+            "example": "home"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=zone"
+          }
+        ]
+      }
+    ],
     "actions": [
       {
-        "id": "Set_DHW_mode",
+        "id": "adam:dhw_mode:set",
         "title": {
-          "en": "Set domestic hot water mode",
-          "nl": "Verander de tapwater comfort modus"
+          "en": "Change hot water mode",
+          "nl": "Verander warmwater modus"
         },
         "args": [
           {
@@ -70,44 +187,10 @@
         ]
       },
       {
-        "id": "Set_DHW_mode",
-        "title": {
-          "en": "Set domestic hot water mode",
-          "nl": "Verander de tapwater comfort modus"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=anna"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "on",
-                "label": {
-                  "en": "Comfort",
-                  "nl": "Comfort"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Normal",
-                  "nl": "Normaal"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Set_Location_Preset",
+        "id": "anna:location_preset:set",
         "title": {
           "en": "Change the preset",
-          "nl": "Stel scene in"
+          "nl": "Verander de preset"
         },
         "args": [
           {
@@ -119,13 +202,6 @@
             "name": "preset",
             "type": "dropdown",
             "values": [
-              {
-                "id": "none",
-                "title": {
-                  "en": "Manual",
-                  "nl": "Handmatig"
-                }
-              },
               {
                 "id": "home",
                 "title": {
@@ -157,7 +233,7 @@
               {
                 "id": "no_frost",
                 "title": {
-                  "en": "Frost protection",
+                  "en": "Anti-freeze",
                   "nl": "Anti-vries"
                 }
               }
@@ -166,10 +242,65 @@
         ]
       },
       {
-        "id": "Set_DHW_mode",
+        "id": "lisa:location_preset:set",
         "title": {
-          "en": "Set domestic hot water mode",
-          "nl": "Verander de tapwater comfort modus"
+          "en": "Change the preset",
+          "nl": "Verander de preset"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=lisa"
+          },
+          {
+            "name": "preset",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "home",
+                "title": {
+                  "en": "Home",
+                  "nl": "Thuis"
+                }
+              },
+              {
+                "id": "away",
+                "title": {
+                  "en": "Away",
+                  "nl": "Weg"
+                }
+              },
+              {
+                "id": "asleep",
+                "title": {
+                  "en": "Night",
+                  "nl": "Nacht"
+                }
+              },
+              {
+                "id": "vacation",
+                "title": {
+                  "en": "Vacation",
+                  "nl": "Vakantie"
+                }
+              },
+              {
+                "id": "no_frost",
+                "title": {
+                  "en": "Anti-freeze",
+                  "nl": "Anti-vries"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "smile:dhw_mode:set",
+        "title": {
+          "en": "Change hot water mode",
+          "nl": "Verander warmwater modus"
         },
         "args": [
           {
@@ -198,6 +329,61 @@
             ]
           }
         ]
+      },
+      {
+        "id": "zone:location_preset:set",
+        "title": {
+          "en": "Change the preset",
+          "nl": "Verander de preset"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=zone"
+          },
+          {
+            "name": "preset",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "home",
+                "title": {
+                  "en": "Home",
+                  "nl": "Thuis"
+                }
+              },
+              {
+                "id": "away",
+                "title": {
+                  "en": "Away",
+                  "nl": "Weg"
+                }
+              },
+              {
+                "id": "asleep",
+                "title": {
+                  "en": "Night",
+                  "nl": "Nacht"
+                }
+              },
+              {
+                "id": "vacation",
+                "title": {
+                  "en": "Vacation",
+                  "nl": "Vakantie"
+                }
+              },
+              {
+                "id": "no_frost",
+                "title": {
+                  "en": "Anti-freeze",
+                  "nl": "Anti-vries"
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -209,38 +395,41 @@
       "class": "sensor",
       "capabilities": [
         "boiler_state",
-        "DHW_state",
+        "dhw_state",
+        "dhw_mode",
         "modulation_level",
         "measure_pressure",
-        "measure_temperature.intended",
-        "measure_temperature.boiler",
+        "measure_temperature.target",
+        "measure_temperature.output",
         "measure_temperature.return",
         "measure_temperature.outdoor",
         "boiler_status_code",
-        "boiler_error_code",
-        "DHW_mode"
+        "boiler_error_code"
       ],
       "capabilitiesOptions": {
-        "measure_temperature.intended": {
+        "measure_temperature.target": {
           "title": {
-            "en": "Intended boiler temperature",
-            "nl": "Gewenste ketel temperatuur"
-          },
-          "preventInsights": false
+            "en": "Target temperature",
+            "nl": "Doeltemperatuur"
+          }
         },
-        "measure_temperature.boiler": {
+        "measure_temperature.output": {
           "title": {
-            "en": "Boiler temperature",
+            "en": "Output temperature",
             "nl": "Aanvoertemperatuur"
-          },
-          "preventInsights": false
+          }
         },
         "measure_temperature.return": {
           "title": {
-            "en": "Return water temperature",
+            "en": "Return temperature",
             "nl": "Retourtemperatuur"
-          },
-          "preventInsights": false
+          }
+        },
+        "measure_temperature.outdoor": {
+          "title": {
+            "en": "Outside temperature",
+            "nl": "Buitentemperatuur"
+          }
         }
       },
       "images": {
@@ -408,6 +597,7 @@
       "class": "thermostat",
       "capabilities": [
         "target_temperature",
+        "location_preset",
         "measure_temperature",
         "measure_battery"
       ],
@@ -479,50 +669,46 @@
     },
     {
       "name": {
-        "en": "Smile T/230"
+        "en": "Smile T"
       },
       "class": "sensor",
       "capabilities": [
         "boiler_state",
-        "DHW_state",
+        "dhw_state",
+        "dhw_mode",
         "modulation_level",
         "measure_pressure",
-        "measure_temperature.intended",
-        "measure_temperature.boiler",
+        "measure_temperature.target",
+        "measure_temperature.output",
         "measure_temperature.return",
         "measure_temperature.outdoor",
         "boiler_status_code",
-        "boiler_error_code",
-        "DHW_mode"
+        "boiler_error_code"
       ],
       "capabilitiesOptions": {
-        "measure_temperature.intended": {
+        "measure_temperature.target": {
           "title": {
-            "en": "Intended boiler temperature",
-            "nl": "Gewenste ketel temperatuur"
-          },
-          "preventInsights": false
+            "en": "Target temperature",
+            "nl": "Doeltemperatuur"
+          }
         },
-        "measure_temperature.boiler": {
+        "measure_temperature.output": {
           "title": {
-            "en": "Boiler temperature",
+            "en": "Output temperature",
             "nl": "Aanvoertemperatuur"
-          },
-          "preventInsights": false
+          }
         },
         "measure_temperature.return": {
           "title": {
-            "en": "Return water temperature",
+            "en": "Return temperature",
             "nl": "Retourtemperatuur"
-          },
-          "preventInsights": false
+          }
         },
         "measure_temperature.outdoor": {
           "title": {
             "en": "Outside temperature",
             "nl": "Buitentemperatuur"
-          },
-          "preventInsights": false
+          }
         }
       },
       "images": {
@@ -709,7 +895,7 @@
       "type": "number",
       "title": {
         "en": "Boiler error code",
-        "nl": "Ketel fout code"
+        "nl": "Ketel foutcode"
       },
       "min": 0,
       "max": 255,
@@ -722,22 +908,30 @@
     "boiler_state": {
       "type": "boolean",
       "title": {
-        "en": "Boiler state",
-        "nl": "Ketel toestand"
+        "en": "Boiler flame",
+        "nl": "Ketel vlam"
       },
       "label": {
         "true": {
-          "en": "Active",
-          "nl": "Actief"
+          "en": "Flame on",
+          "nl": "Vlam aan"
         },
         "false": {
-          "en": "Idle",
-          "nl": "Uit"
+          "en": "Flame off",
+          "nl": "Vlam uit"
         }
       },
       "getable": true,
       "setable": false,
       "insights": true,
+      "insightsTitleTrue": {
+        "en": "Flame on",
+        "nl": "Vlam aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Flame off",
+        "nl": "Vlam uit"
+      },
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/boiler_state.svg"
     },
@@ -745,7 +939,7 @@
       "type": "number",
       "title": {
         "en": "Boiler status code",
-        "nl": "Ketel toestand code"
+        "nl": "Ketel statuscode"
       },
       "min": 0,
       "max": 255,
@@ -755,10 +949,10 @@
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/boiler_status_code.svg"
     },
-    "DHW_mode": {
+    "dhw_mode": {
       "title": {
-        "en": "Domestic hot water mode",
-        "nl": "Tap water comfort modus"
+        "en": "Domestic hot-water mode",
+        "nl": "Warmwater modus"
       },
       "uiComponent": "picker",
       "getable": true,
@@ -780,27 +974,35 @@
         }
       ]
     },
-    "DHW_state": {
+    "dhw_state": {
       "type": "boolean",
       "title": {
-        "en": "Hot water state",
-        "nl": "Tap water toestand"
+        "en": "Domestic hot-water",
+        "nl": "Warmwatervraag"
       },
       "label": {
         "true": {
-          "en": "Active",
-          "nl": "Actief"
+          "en": "Hot water on",
+          "nl": "Warmwatervraag"
         },
         "false": {
-          "en": "Idle",
-          "nl": "Uit"
+          "en": "Hot water off",
+          "nl": "Geen warmwatervraag"
         }
       },
       "getable": true,
       "setable": false,
       "insights": true,
+      "insightsTitleTrue": {
+        "en": "Hot water turned on",
+        "nl": "Warmwatervraag ging aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Hot water turned off",
+        "nl": "Warmwatervraag ging uit"
+      },
       "uiComponent": "sensor",
-      "icon": "/assets/capabilities/DHW_state.svg"
+      "icon": "/assets/capabilities/dhw_state.svg"
     },
     "location_preset": {
       "title": {
@@ -811,13 +1013,6 @@
       "setable": true,
       "type": "enum",
       "values": [
-        {
-          "id": "none",
-          "title": {
-            "en": "Manual",
-            "nl": "Handmatig"
-          }
-        },
         {
           "id": "home",
           "title": {
@@ -849,7 +1044,7 @@
         {
           "id": "no_frost",
           "title": {
-            "en": "Frost protection",
+            "en": "Anti-freeze",
             "nl": "Anti-vries"
           }
         }

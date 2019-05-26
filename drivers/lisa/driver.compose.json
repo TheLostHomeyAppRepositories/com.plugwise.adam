@@ -1,11 +1,15 @@
 {
-  "$extends": "plugwise",
+  "$extends": [
+    "plugwise",
+    "flow.thermostat"
+  ],
   "name": {
     "en": "Lisa"
   },
   "class": "thermostat",
   "capabilities": [
     "target_temperature",
+    "location_preset",
     "measure_temperature",
     "measure_battery"
   ],

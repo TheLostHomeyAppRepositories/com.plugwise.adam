@@ -1,7 +1,7 @@
 'use strict';
 
-const PlugwiseAdamDiscovery = require('../lib/PlugwiseAdamDiscovery');
-const discovery = new PlugwiseAdamDiscovery();
+const PlugwiseDiscovery = require('../lib/PlugwiseDiscovery');
+const discovery = new PlugwiseDiscovery();
 discovery.discover({
   timeout: 500,
 })

@@ -1,14 +1,15 @@
 'use strict';
 
-const Homey = require('homey');
-const PlugwiseAdamDriver = require('../../lib/PlugwiseAdamDriver');
+const PlugwiseDriver = require('../../lib/PlugwiseDriver');
 
-module.exports = class PlugwiseAdamPlugDriver extends PlugwiseAdamDriver {
-	
+module.exports = class PlugwisePlugDriver extends PlugwiseDriver {
+
+	static get BRIDGE_PRODUCTS() {
+		return [ 'smile_open_therm' ];
+	}
+
 	onPairFilterAppliance({ appliance }) {
-  	if( appliance.type === 'zz_misc' ) return true;
-  	if( appliance.type === 'central_heating_pump' ) return true;  	
-  	return false;
+		return (appliance.type === 'zz_misc' || appliance.type === 'central_heating_pump');
 	}
 	
-}
+};

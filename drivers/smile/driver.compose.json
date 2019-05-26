@@ -1,49 +1,48 @@
 {
+  "$extends": [
+    "flow.gateway"
+  ],
   "name": {
-    "en": "Smile T/230"
+    "en": "Smile T"
   },
   "class": "sensor",
   "capabilities": [
     "boiler_state",
-    "DHW_state",
+    "dhw_state",
+    "dhw_mode",
     "modulation_level",
     "measure_pressure",
-    "measure_temperature.intended",
-    "measure_temperature.boiler",
+    "measure_temperature.target",
+    "measure_temperature.output",
     "measure_temperature.return",
     "measure_temperature.outdoor",
     "boiler_status_code",
-    "boiler_error_code",
-    "DHW_mode"
+    "boiler_error_code"
   ],
   "capabilitiesOptions": {
-    "measure_temperature.intended": {
+    "measure_temperature.target": {
       "title": {
-        "en": "Intended boiler temperature",
-        "nl": "Gewenste ketel temperatuur"
-      },
-      "preventInsights": false
+        "en": "Target temperature",
+        "nl": "Doeltemperatuur"
+      }
     },
-    "measure_temperature.boiler": {
+    "measure_temperature.output": {
       "title": {
-        "en": "Boiler temperature",
+        "en": "Output temperature",
         "nl": "Aanvoertemperatuur"
-      },
-      "preventInsights": false
+      }
     },
     "measure_temperature.return": {
       "title": {
-        "en": "Return water temperature",
+        "en": "Return temperature",
         "nl": "Retourtemperatuur"
-      },
-      "preventInsights": false
+      }
     },
     "measure_temperature.outdoor": {
       "title": {
         "en": "Outside temperature",
         "nl": "Buitentemperatuur"
-      },
-      "preventInsights": false
+      }
     }
   },
   "images": {

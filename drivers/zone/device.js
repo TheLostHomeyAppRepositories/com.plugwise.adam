@@ -1,11 +1,13 @@
 'use strict';
 
-const Homey = require('homey');
-const PlugwiseAdamDevice = require('../../lib/PlugwiseAdamDevice');
+const PlugwiseDevice = require('../../lib/PlugwiseDevice');
 
-module.exports = class PlugwiseAdamZoneDevice extends PlugwiseAdamDevice {
+module.exports = class PlugwiseZoneDevice extends PlugwiseDevice {
+
 
   onInit(...props) {
+    this.driverId = 'valve';
+
     super.onInit(...props);
 
     this.registerCapabilityListener('location_preset', this.onCapabilityLocationPreset.bind(this));
@@ -27,6 +29,7 @@ module.exports = class PlugwiseAdamZoneDevice extends PlugwiseAdamDevice {
     if( location.logs
      && Array.isArray(location.logs.point_log) ) {
        location.logs.point_log.forEach(log => {
+
          if( log.type === 'temperature'
           && log.unit === 'C'
           && log.period
@@ -34,12 +37,7 @@ module.exports = class PlugwiseAdamZoneDevice extends PlugwiseAdamDevice {
            const value = parseFloat(log.period.measurement.$text);
            this.setCapabilityValue('measure_temperature', value).catch(this.error);
          }
-       });
-    }
 
-    if( location.logs
-     && Array.isArray(location.logs.point_log) ) {
-       location.logs.point_log.forEach(log => {
          if( log.type === 'electricity_consumed'
           && log.unit === 'W'
           && log.period
@@ -47,13 +45,13 @@ module.exports = class PlugwiseAdamZoneDevice extends PlugwiseAdamDevice {
            const value = parseFloat(log.period.measurement.$text);
            this.setCapabilityValue('measure_power', value).catch(this.error);
          }
+
        });
     }
   }
 
-  async onCapabilityLocationPreset( value ) {
+  async onCapabilityLocationPreset( preset ) {
     const { locationId } = this;
-    const preset = value;
     return this.bridge.setPreset({ locationId, preset });
   }
 
@@ -76,4 +74,4 @@ module.exports = class PlugwiseAdamZoneDevice extends PlugwiseAdamDevice {
     throw new Error('Unknown Error');
   }
 
-}
+};

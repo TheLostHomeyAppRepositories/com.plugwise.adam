@@ -2,7 +2,7 @@
   "type": "number",
   "title": {
     "en": "Boiler status code",
-    "nl": "Ketel toestand code"
+    "nl": "Ketel statuscode"
   },
   "min": 0,
   "max": 255,

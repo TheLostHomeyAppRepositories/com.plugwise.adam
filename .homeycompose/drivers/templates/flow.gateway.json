@@ -1,0 +1,57 @@
+{
+  "$flow": {
+    "actions": [
+      {
+        "id": "{{driverId}}:dhw_mode:set",
+        "title": {
+          "en": "Change hot water mode",
+          "nl": "Verander warmwater modus"
+        },
+        "args": [
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "Comfort",
+                  "nl": "Comfort"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Normal",
+                  "nl": "Normaal"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "id": "{{driverId}}:boiler_error_code:changed",
+        "title": {
+          "en": "Boiler error code changed",
+          "nl": "Ketel foutcode veranderd"
+        },
+        "tokens": [
+          {
+            "name": "code",
+            "title": {
+              "en": "Code"
+            },
+            "example": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "$_devices": [
+    "adam",
+    "smile"
+  ]
+}

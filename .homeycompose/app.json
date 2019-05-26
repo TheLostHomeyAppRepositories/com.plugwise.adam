@@ -1,7 +1,7 @@
 {
   "id": "com.plugwise.adam",
-  "version": "2.0.0",
-  "compatibility": ">=2.0.0",
+  "version": "2.1.0",
+  "compatibility": ">=2.1.0",
   "brandColor": "#3CA2D7",
   "sdk": 2,
   "name": {

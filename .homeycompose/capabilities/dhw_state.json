@@ -1,0 +1,30 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Domestic hot-water",
+    "nl": "Warmwatervraag"
+  },
+  "label": {
+    "true": {
+      "en": "Hot water on",
+      "nl": "Warmwatervraag"
+    },
+    "false": {
+      "en": "Hot water off",
+      "nl": "Geen warmwatervraag"
+    }
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Hot water turned on",
+    "nl": "Warmwatervraag ging aan"
+  },
+  "insightsTitleFalse": {
+    "en": "Hot water turned off",
+    "nl": "Warmwatervraag ging uit"
+  },
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/dhw_state.svg"
+}

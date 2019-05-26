@@ -8,13 +8,6 @@
   "type": "enum",
   "values": [
     {
-      "id": "none",
-      "title": {
-        "en": "Manual",
-        "nl": "Handmatig"
-      }
-    },
-    {
       "id": "home",
       "title": {
         "en": "Home",
@@ -45,7 +38,7 @@
     {
       "id": "no_frost",
       "title": {
-        "en": "Frost protection",
+        "en": "Anti-freeze",
         "nl": "Anti-vries"
       }
     }
