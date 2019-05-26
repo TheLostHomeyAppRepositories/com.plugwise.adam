@@ -1,29 +1,29 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Boiler flame",
-    "nl": "Ketel vlam"
+    "en": "Boiler state",
+    "nl": "Ketel status"
   },
   "label": {
     "true": {
-      "en": "Flame on",
-      "nl": "Vlam aan"
+      "en": "Boiler active",
+      "nl": "Ketel actief"
     },
     "false": {
-      "en": "Flame off",
-      "nl": "Vlam uit"
+      "en": "Boiler idle",
+      "nl": "Ketel inactief"
     }
   },
   "getable": true,
   "setable": false,
   "insights": true,
   "insightsTitleTrue": {
-    "en": "Flame on",
-    "nl": "Vlam aan"
+    "en": "Boiler active",
+    "nl": "Ketel actief"
   },
   "insightsTitleFalse": {
-    "en": "Flame off",
-    "nl": "Vlam uit"
+    "en": "Boiler idle",
+    "nl": "Ketel inactief"
   },
   "uiComponent": "sensor",
   "icon": "/assets/capabilities/boiler_state.svg"
