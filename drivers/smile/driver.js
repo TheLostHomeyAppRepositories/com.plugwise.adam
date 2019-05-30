@@ -1,15 +1,11 @@
 'use strict';
 
-const PlugwiseDriver = require('../../lib/PlugwiseDriver');
+const PlugwiseGatewayDriver = require('../../lib/PlugwiseGatewayDriver');
 
-module.exports = class PlugwiseSmileDriver extends PlugwiseDriver {
+module.exports = class PlugwiseSmileDriver extends PlugwiseGatewayDriver {
 
 	static get BRIDGE_PRODUCTS() {
 		return [ 'smile_thermo' ];
-	}
-
-	onPairFilterAppliance({ appliance }) {
-		return (appliance.type === 'heater_central');
 	}
 
 };
