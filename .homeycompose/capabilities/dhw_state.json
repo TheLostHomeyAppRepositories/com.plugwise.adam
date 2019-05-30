@@ -26,5 +26,5 @@
     "nl": "Warmwatervraag ging uit"
   },
   "uiComponent": "sensor",
-  "icon": "/assets/capabilities/dhw_state.svg"
+  "icon": "/assets/capabilities/DHW_state.svg"
 }

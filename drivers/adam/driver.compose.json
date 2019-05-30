@@ -8,25 +8,25 @@
   "class": "sensor",
   "capabilities": [
     "boiler_state",
-    "dhw_state",
-    "dhw_mode",
+    "DHW_state",
+    "DHW_mode",
     "modulation_level",
     "measure_pressure",
-    "measure_temperature.target",
-    "measure_temperature.output",
+    "measure_temperature.intended",
+    "measure_temperature.boiler",
     "measure_temperature.return",
     "measure_temperature.outdoor",
     "boiler_status_code",
     "boiler_error_code"
   ],
   "capabilitiesOptions": {
-    "measure_temperature.target": {
+    "measure_temperature.intended": {
       "title": {
         "en": "Target temperature",
         "nl": "Doeltemperatuur"
       }
     },
-    "measure_temperature.output": {
+    "measure_temperature.boiler": {
       "title": {
         "en": "Output temperature",
         "nl": "Aanvoertemperatuur"

@@ -2,7 +2,7 @@
   "$flow": {
     "actions": [
       {
-        "id": "{{driverId}}:dhw_mode:set",
+        "id": "Set_DHW_mode",
         "title": {
           "en": "Change hot water mode",
           "nl": "Verander warmwater modus"
@@ -33,7 +33,7 @@
     ],
     "triggers": [
       {
-        "id": "{{driverId}}:boiler_error_code:changed",
+        "id": "boiler_error_code:changed",
         "title": {
           "en": "Boiler error code changed",
           "nl": "Ketel foutcode veranderd"

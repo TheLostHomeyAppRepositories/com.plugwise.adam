@@ -2,7 +2,7 @@
   "$flow": {
     "actions": [
       {
-        "id": "{{driverId}}:location_preset:set",
+        "id": "Set_Location_Preset",
         "title": {
           "en": "Change the preset",
           "nl": "Verander de preset"
@@ -43,8 +43,8 @@
               {
                 "id": "no_frost",
                 "title": {
-                  "en": "Anti-freeze",
-                  "nl": "Anti-vries"
+                  "en": "Frost protection",
+                  "nl": "Vorstbeveiliging"
                 }
               }
             ]
@@ -54,7 +54,7 @@
     ],
     "triggers": [
       {
-        "id": "{{driverId}}:location_preset:changed",
+        "id": "location_preset:changed",
         "title": {
           "en": "The preset has changed",
           "nl": "De preset is veranderd"

@@ -1,7 +1,7 @@
 {
   "id": "com.plugwise.adam",
   "version": "2.1.0",
-  "compatibility": ">=2.0.0",
+  "compatibility": ">=2.1.0",
   "brandColor": "#3CA2D7",
   "sdk": 2,
   "name": {
@@ -36,7 +36,7 @@
   "flow": {
     "triggers": [
       {
-        "id": "adam:boiler_error_code:changed",
+        "id": "boiler_error_code:changed",
         "title": {
           "en": "Boiler error code changed",
           "nl": "Ketel foutcode veranderd"
@@ -59,7 +59,7 @@
         ]
       },
       {
-        "id": "anna:location_preset:changed",
+        "id": "location_preset:changed",
         "title": {
           "en": "The preset has changed",
           "nl": "De preset is veranderd"
@@ -82,7 +82,7 @@
         ]
       },
       {
-        "id": "lisa:location_preset:changed",
+        "id": "location_preset:changed",
         "title": {
           "en": "The preset has changed",
           "nl": "De preset is veranderd"
@@ -105,7 +105,7 @@
         ]
       },
       {
-        "id": "smile:boiler_error_code:changed",
+        "id": "boiler_error_code:changed",
         "title": {
           "en": "Boiler error code changed",
           "nl": "Ketel foutcode veranderd"
@@ -128,7 +128,7 @@
         ]
       },
       {
-        "id": "zone:location_preset:changed",
+        "id": "location_preset:changed",
         "title": {
           "en": "The preset has changed",
           "nl": "De preset is veranderd"
@@ -153,7 +153,7 @@
     ],
     "actions": [
       {
-        "id": "adam:dhw_mode:set",
+        "id": "Set_DHW_mode",
         "title": {
           "en": "Change hot water mode",
           "nl": "Verander warmwater modus"
@@ -187,7 +187,7 @@
         ]
       },
       {
-        "id": "anna:location_preset:set",
+        "id": "Set_Location_Preset",
         "title": {
           "en": "Change the preset",
           "nl": "Verander de preset"
@@ -233,8 +233,8 @@
               {
                 "id": "no_frost",
                 "title": {
-                  "en": "Anti-freeze",
-                  "nl": "Anti-vries"
+                  "en": "Frost protection",
+                  "nl": "Vorstbeveiliging"
                 }
               }
             ]
@@ -242,7 +242,7 @@
         ]
       },
       {
-        "id": "lisa:location_preset:set",
+        "id": "Set_Location_Preset",
         "title": {
           "en": "Change the preset",
           "nl": "Verander de preset"
@@ -288,8 +288,8 @@
               {
                 "id": "no_frost",
                 "title": {
-                  "en": "Anti-freeze",
-                  "nl": "Anti-vries"
+                  "en": "Frost protection",
+                  "nl": "Vorstbeveiliging"
                 }
               }
             ]
@@ -297,7 +297,7 @@
         ]
       },
       {
-        "id": "smile:dhw_mode:set",
+        "id": "Set_DHW_mode",
         "title": {
           "en": "Change hot water mode",
           "nl": "Verander warmwater modus"
@@ -331,7 +331,7 @@
         ]
       },
       {
-        "id": "zone:location_preset:set",
+        "id": "Set_Location_Preset",
         "title": {
           "en": "Change the preset",
           "nl": "Verander de preset"
@@ -377,8 +377,8 @@
               {
                 "id": "no_frost",
                 "title": {
-                  "en": "Anti-freeze",
-                  "nl": "Anti-vries"
+                  "en": "Frost protection",
+                  "nl": "Vorstbeveiliging"
                 }
               }
             ]
@@ -395,25 +395,25 @@
       "class": "sensor",
       "capabilities": [
         "boiler_state",
-        "dhw_state",
-        "dhw_mode",
+        "DHW_state",
+        "DHW_mode",
         "modulation_level",
         "measure_pressure",
-        "measure_temperature.target",
-        "measure_temperature.output",
+        "measure_temperature.intended",
+        "measure_temperature.boiler",
         "measure_temperature.return",
         "measure_temperature.outdoor",
         "boiler_status_code",
         "boiler_error_code"
       ],
       "capabilitiesOptions": {
-        "measure_temperature.target": {
+        "measure_temperature.intended": {
           "title": {
             "en": "Target temperature",
             "nl": "Doeltemperatuur"
           }
         },
-        "measure_temperature.output": {
+        "measure_temperature.boiler": {
           "title": {
             "en": "Output temperature",
             "nl": "Aanvoertemperatuur"
@@ -674,25 +674,25 @@
       "class": "sensor",
       "capabilities": [
         "boiler_state",
-        "dhw_state",
-        "dhw_mode",
+        "DHW_state",
+        "DHW_mode",
         "modulation_level",
         "measure_pressure",
-        "measure_temperature.target",
-        "measure_temperature.output",
+        "measure_temperature.intended",
+        "measure_temperature.boiler",
         "measure_temperature.return",
         "measure_temperature.outdoor",
         "boiler_status_code",
         "boiler_error_code"
       ],
       "capabilitiesOptions": {
-        "measure_temperature.target": {
+        "measure_temperature.intended": {
           "title": {
             "en": "Target temperature",
             "nl": "Doeltemperatuur"
           }
         },
-        "measure_temperature.output": {
+        "measure_temperature.boiler": {
           "title": {
             "en": "Output temperature",
             "nl": "Aanvoertemperatuur"
@@ -908,29 +908,29 @@
     "boiler_state": {
       "type": "boolean",
       "title": {
-        "en": "Boiler flame",
-        "nl": "Ketel vlam"
+        "en": "Boiler state",
+        "nl": "Ketel status"
       },
       "label": {
         "true": {
-          "en": "Flame on",
-          "nl": "Vlam aan"
+          "en": "Boiler active",
+          "nl": "Ketel actief"
         },
         "false": {
-          "en": "Flame off",
-          "nl": "Vlam uit"
+          "en": "Boiler idle",
+          "nl": "Ketel inactief"
         }
       },
       "getable": true,
       "setable": false,
       "insights": true,
       "insightsTitleTrue": {
-        "en": "Flame on",
-        "nl": "Vlam aan"
+        "en": "Boiler active",
+        "nl": "Ketel actief"
       },
       "insightsTitleFalse": {
-        "en": "Flame off",
-        "nl": "Vlam uit"
+        "en": "Boiler idle",
+        "nl": "Ketel inactief"
       },
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/boiler_state.svg"
@@ -949,7 +949,7 @@
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/boiler_status_code.svg"
     },
-    "dhw_mode": {
+    "DHW_mode": {
       "title": {
         "en": "Domestic hot-water mode",
         "nl": "Warmwater modus"
@@ -974,7 +974,7 @@
         }
       ]
     },
-    "dhw_state": {
+    "DHW_state": {
       "type": "boolean",
       "title": {
         "en": "Domestic hot-water",
@@ -1002,7 +1002,7 @@
         "nl": "Warmwatervraag ging uit"
       },
       "uiComponent": "sensor",
-      "icon": "/assets/capabilities/dhw_state.svg"
+      "icon": "/assets/capabilities/DHW_state.svg"
     },
     "location_preset": {
       "title": {
@@ -1044,8 +1044,8 @@
         {
           "id": "no_frost",
           "title": {
-            "en": "Anti-freeze",
-            "nl": "Anti-vries"
+            "en": "Frost protection",
+            "nl": "Vorstbeveiliging"
           }
         }
       ]
