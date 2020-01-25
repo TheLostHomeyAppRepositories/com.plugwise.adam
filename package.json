@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "fast-xml-parser": "^3.12.12",
-    "mdns-js": "^1.0.3",
     "node-fetch": "^2.3.0"
   }
 }
